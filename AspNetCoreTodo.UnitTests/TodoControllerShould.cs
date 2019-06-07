@@ -24,11 +24,11 @@ namespace AspNetCoreTodo.UnitTests
 
             // Act
             var result = await controller.MarkDone(Guid.Empty);
-            var statusCodeResult = result as StatusCodeResult;
+            var redirectResult = result as RedirectToActionResult;
 
             // Assert
-            Assert.NotNull(statusCodeResult);
-            Assert.Equal(400, statusCodeResult.StatusCode);
+            Assert.NotNull(redirectResult);
+            Assert.Equal("Index", redirectResult.ActionName);
         }
         
         [Fact]
@@ -47,11 +47,11 @@ namespace AspNetCoreTodo.UnitTests
             // Act
             var randomId = Guid.NewGuid();
             var result = await controller.MarkDone(randomId);
-            var statusCodeResult = result as StatusCodeResult;
+            var redirectResult = result as RedirectToActionResult;
 
             // Assert
-            Assert.NotNull(statusCodeResult);
-            Assert.Equal(401, statusCodeResult.StatusCode);
+            Assert.NotNull(redirectResult);
+            Assert.Equal("Index", redirectResult.ActionName);
         }
 
         [Fact]
@@ -75,11 +75,11 @@ namespace AspNetCoreTodo.UnitTests
             // Act
             var randomId = Guid.NewGuid();
             var result = await controller.MarkDone(randomId);
-            var statusCodeResult = result as StatusCodeResult;
+            var redirectResult = result as RedirectToActionResult;
 
             // Assert
-            Assert.NotNull(statusCodeResult);
-            Assert.Equal(200, statusCodeResult.StatusCode);
+            Assert.NotNull(redirectResult);
+            Assert.Equal("Index", redirectResult.ActionName);
         }
     }
 }
