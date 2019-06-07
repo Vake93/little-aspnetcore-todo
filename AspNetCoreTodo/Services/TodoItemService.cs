@@ -1,13 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AspNetCoreTodo.Data;
 using AspNetCoreTodo.Models;
 using Microsoft.EntityFrameworkCore;
+using ServiceRegister;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AspNetCoreTodo.Services
 {
+    [ScopedService]
     public class TodoItemService : ITodoItemService
     {
         private readonly ApplicationDbContext _context;
