@@ -4,7 +4,7 @@
 
 ## From the Original Read Me:
 
-  ## To-do application in ASP.NET Core 2.0
+  ## To-do application in ASP.NET Core 2.1
 
   This project is the output of **[The Little ASP.NET Core Book](http://littleasp.net/book)**, a short tutorial that teaches you how to build applications using ASP.NET Core.
 
